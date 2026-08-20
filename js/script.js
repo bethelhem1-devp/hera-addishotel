@@ -1,3 +1,38 @@
+/* ---------------------------------------------------------------
+   SCREEN INTRO — hides the splash after a short delay or once
+   the page has fully loaded, whichever comes first.
+------------------------------------------------------------------*/
+function initIntroScreen() {
+  const intro = document.getElementById("introScreen");
+  if (!intro) return;
+
+  const hideIntro = () => intro.classList.add("is-hidden");
+
+  // Hide once everything (images, fonts) has loaded, with a minimum
+  // display time so the animation isn't cut off on fast connections.
+  const minDisplay = new Promise((resolve) => setTimeout(resolve, 2200));
+  const pageLoaded = new Promise((resolve) => {
+    if (document.readyState === "complete") resolve();
+    else window.addEventListener("load", resolve, { once: true });
+  });
+
+  Promise.all([minDisplay, pageLoaded]).then(hideIntro);
+
+  // Safety net: never let it block the site for more than 4s
+  setTimeout(hideIntro, 4000);
+
+  // Prevent scrolling while the intro is visible
+  document.body.style.overflow = "hidden";
+  setTimeout(() => { document.body.style.overflow = ""; }, 2300);
+}
+
+document.addEventListener("DOMContentLoaded", initIntroScreen);
+
+
+
+
+
+
 /* ============================================================
    GLAM HOTEL — script.js
    Vanilla JS: navbar behaviour, booking modal + mailto reservation,

@@ -23,5 +23,5 @@ A modern, responsive landing page for a hotel designed to showcase features, roo
 
 ## 🚀 Live Demo
 
-Check out the live project here: [Live Demo Link](https://your-site-name.netlify.app) *(or Vercel link)*
+Check out the live project here: [Live Demo Link](https://hera-addishotel.vercel.app)
 
