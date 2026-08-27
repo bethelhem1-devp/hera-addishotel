@@ -386,7 +386,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 @keyframes heroZoom {
   0%   { transform: scale(1); }
-  100% { transform: scale(1.25); }
+  100% { transform: scale(1.20); }
 }
 .hero::after {
   content: "";
@@ -395,7 +395,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: linear-gradient(180deg, rgba(59,47,47,0.55) 0%, rgba(59,47,47,0.35) 45%, rgba(59,47,47,0.75) 100%);
   z-index: -1;
 }
-.hero-content { max-width: 720px; padding-top: 4rem; }
+.hero-content { max-width: 720px; padding-top: 4rem;}
 .hero-content .eyebrow { color: white; }
 .hero-content h1 {
   font-size: clamp(2.6rem, 6vw, 4.4rem);
@@ -531,8 +531,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .amenity-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
 .amenity-card p { font-size: 0.9rem; color: var(--brown-soft); }
 
-@media (max-width: 900px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .amenities-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); } .hero-content{margin-top:15rem;} }
+@media (max-width: 520px) { .amenities-grid { grid-template-columns: 1fr; } .hero-content h1{font-size:2.5rem; }.hero-content{margin-top:15rem;  } }
 
 /* ---------- Testimonials slider ---------- */
 .testimonial-slider {
@@ -583,7 +583,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   gap: 2rem;
 }
 @media (max-width: 980px) { .room-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { .room-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .room-grid { grid-template-columns: 1fr; } .hero-content h1{font-size:2.5rem; }.hero-content{margin-top:15rem;  }}
 
 .room-card {
   background: var(--white);
