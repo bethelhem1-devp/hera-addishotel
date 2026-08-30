@@ -1,15 +1,25 @@
 /* ---------------------------------------------------------------
-   SCREEN INTRO — hides the splash after a short delay or once
-   the page has fully loaded, whichever comes first.
+   SCREEN INTRO — show once per visit, never on revisiting home
+------------------------------------------------------------------*/
+/* ---------------------------------------------------------------
+   SCREEN INTRO — shows only once per visit (first page loaded),
+   never again for the rest of the session, even on Home.
+------------------------------------------------------------------*/
+/* ---------------------------------------------------------------
+   SCREEN INTRO — shows only once per visit (first page loaded),
+   never again for the rest of the session, even on Home.
 ------------------------------------------------------------------*/
 function initIntroScreen() {
   const intro = document.getElementById("introScreen");
   if (!intro) return;
 
+  // Already shown this session (inline script already hid it) — skip
+  if (sessionStorage.getItem("glamIntroShown")) return;
+
+  sessionStorage.setItem("glamIntroShown", "true");
+
   const hideIntro = () => intro.classList.add("is-hidden");
 
-  // Hide once everything (images, fonts) has loaded, with a minimum
-  // display time so the animation isn't cut off on fast connections.
   const minDisplay = new Promise((resolve) => setTimeout(resolve, 2200));
   const pageLoaded = new Promise((resolve) => {
     if (document.readyState === "complete") resolve();
@@ -17,11 +27,8 @@ function initIntroScreen() {
   });
 
   Promise.all([minDisplay, pageLoaded]).then(hideIntro);
-
-  // Safety net: never let it block the site for more than 4s
   setTimeout(hideIntro, 4000);
 
-  // Prevent scrolling while the intro is visible
   document.body.style.overflow = "hidden";
   setTimeout(() => { document.body.style.overflow = ""; }, 2300);
 }

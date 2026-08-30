@@ -33,13 +33,19 @@
   <div class="intro-content">
     <p class="intro-tag">Welcome to</p>
     <h1 class="intro-title">
-      <span class="intro-word">HERA ADDIS</span>
+      <span class="intro-word"><span class="intro-word--gold">HERA</span> ADDIS</span>
       <span class="intro-word intro-word--gold">HOTEL</span>
     </h1>
     <div class="intro-line"></div>
     <p class="intro-sub">Addis Ababa · Ethiopia</p>
   </div>
 </div>
+
+<script>
+  if (sessionStorage.getItem("glamIntroShown")) {
+    document.getElementById("introScreen").style.display = "none";
+  }
+</script>
 
   <!-- ============ NAVBAR ============ -->
   <header>
@@ -75,7 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
+      <div class="hero-scroll" aria-hidden="true"><span></span><span class="line"></span></div>
     </section>
 
     <!-- ============ QUICK HIGHLIGHTS / STORY (asymmetrical grid) ============ -->
