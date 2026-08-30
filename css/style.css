@@ -376,9 +376,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color: var(--cream);
 }
 .hero-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background-image: url("../assets/building-night.webp");
+  background-image: url("../assets/daytime-buld.jpg");
   background-size: cover;
   background-position: center;
   animation: heroZoom 22s ease-in-out infinite alternate;
@@ -386,7 +386,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 @keyframes heroZoom {
   0%   { transform: scale(1); }
-  100% { transform: scale(1.20); }
+  100% { transform: scale(1.1); }
 }
 .hero::after {
   content: "";
