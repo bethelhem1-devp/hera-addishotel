@@ -117,6 +117,9 @@
 
   // ----------------------------------------------------------
   // Suggested question chips
+  // Clicking a chip only FILLS the input box as an example prompt —
+  // it does NOT send automatically. The guest can edit it, then
+  // send it themselves via Enter or the send button.
   // ----------------------------------------------------------
   function renderSuggestions() {
     els.suggestions.innerHTML = "";
@@ -127,7 +130,11 @@
       chip.textContent = question;
       chip.addEventListener("click", () => {
         els.textarea.value = question;
-        handleSend();
+        els.textarea.focus();
+        // Place the cursor at the end of the inserted text
+        els.textarea.setSelectionRange(question.length, question.length);
+        // Trigger the same auto-resize logic used for manual typing
+        els.textarea.dispatchEvent(new Event("input"));
       });
       els.suggestions.appendChild(chip);
     });
