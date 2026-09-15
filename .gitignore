@@ -13,3 +13,18 @@ Thumbs.db
 *.swp
 *.swo
 
+# Environment variables (secrets - never commit)
+.env
+.env.local
+.env*.local
+
+# Vercel local config
+.vercel
+
+# Dependencies
+node_modules/
+
+# OS/editor files
+
+*.log
+

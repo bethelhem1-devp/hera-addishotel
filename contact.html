@@ -22,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/chatbot.css" />
 </head>
 <body>
 
@@ -269,5 +270,53 @@
   </div>
 
   <script src="./js/script.js"></script>
+
+   <!-- ============ AI HOTEL ASSISTANT CHATBOT ============ -->
+<button id="heraChatToggle" class="hera-chat-toggle" aria-label="Open hotel assistant chat">
+  <svg class="hera-chat-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <svg class="hera-chat-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/>
+  </svg>
+  <span class="hera-chat-dot" aria-hidden="true"></span>
+</button>
+
+<div id="heraChatWindow" class="hera-chat-window" role="dialog" aria-label="Hotel assistant chat">
+  <div class="hera-chat-header">
+    <div class="hera-chat-avatar">HA</div>
+    <div class="hera-chat-header-text">
+      <h3>Hera Assistant</h3>
+      <p><span class="hera-chat-status-dot"></span> Online now</p>
+    </div>
+    <button id="heraChatClose" class="hera-chat-header-close" aria-label="Close chat">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="heraChatMessages" class="hera-chat-messages"></div>
+
+  <div id="heraChatSuggestions" class="hera-chat-suggestions"></div>
+
+  <form id="heraChatForm" class="hera-chat-input-row">
+    <textarea
+      id="heraChatTextarea"
+      rows="1"
+      placeholder="Ask about rooms, amenities, check-in…"
+      aria-label="Type your message"
+    ></textarea>
+    <button type="submit" id="heraChatSend" class="hera-chat-send" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </form>
+
+  <p class="hera-chat-footer-note">AI assistant — for bookings, please use the reservation form.</p>
+</div>
+
+<script src="js/chatbot.js"></script>
 </body>
 </html>
