@@ -84,7 +84,7 @@ Rules you must always follow:
 5. Stay in character as the Hera Addis Hotel concierge at all times.
 `.trim();
 
-const GEMINI_MODEL = "gemini-2.0-flash";
+const GEMINI_MODEL = "gemini-flash-latest";
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 /**
